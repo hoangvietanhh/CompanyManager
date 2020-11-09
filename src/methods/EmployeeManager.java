@@ -1,6 +1,5 @@
 package methods;
 
-import com.sun.corba.se.pept.encoding.OutputObject;
 import entities.Developer;
 import entities.Employee;
 import entities.Seller;
@@ -14,8 +13,18 @@ public class EmployeeManager  {
     ArrayList<Employee> employees = (ArrayList<Employee>) readFile();
     Information information = new Information();
     Scanner input =new Scanner(System.in);
+    FileTxt fileTxt = new FileTxt();
     static final String FILE_NAME = "list";
+    static final String PATH1= "listTxt";
 
+    public void writeFileText(){
+        ArrayList<String> list = new ArrayList<>();
+        for (Employee employee :employees){
+            list.add(employee.toString());
+
+        }
+        fileTxt.writeFile(list,PATH1);
+    }
 
     public void addEmployee(Employee employee){
         if (employees == null){
@@ -146,6 +155,8 @@ public class EmployeeManager  {
             return null;
         }
     }
+
+
 
 
 }

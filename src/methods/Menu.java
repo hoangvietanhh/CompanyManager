@@ -25,6 +25,7 @@ public class Menu {
             System.out.println(" 5. Show salary of employee.");
             System.out.println(" 6. Find employee.");
             System.out.println(" 7. Export file to save.");
+            System.out.println(" 8. Export file to text.");
             System.out.println(" 0. Exit.");
             System.out.println("------------------------------");
             int choice = Integer.parseInt(input.nextLine());
@@ -117,6 +118,11 @@ public class Menu {
                 case 7:
                     employeeManager.writeFile();
                     information.writeFileSalary();
+                    System.out.println("-------Complete-------");
+                    break;
+                case 8:
+                    employeeManager.writeFileText();
+                    information.writeFileText();
                     System.out.println("-------Complete-------");
                     break;
                 case 0:

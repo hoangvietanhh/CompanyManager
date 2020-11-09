@@ -12,6 +12,20 @@ import java.util.regex.Pattern;
 
 public class Information implements Serializable {
     static final String FILE_SALARY = "salary";
+    static final String PATH2 = "salaryTxt";
+
+    FileTxt fileTxt = new FileTxt();
+
+    public void writeFileText(){
+        ArrayList<String> result = new ArrayList<>();
+        Set<String> list = getListSalary().keySet();
+
+        for (String str : list){
+            result.add(str + "\t" +  getListSalary().get(str));
+
+        }
+        fileTxt.writeFile(result,PATH2);
+    }
 
     private Map<String,Integer> listSalary = (Map<String, Integer>) readFileSalary();
 
